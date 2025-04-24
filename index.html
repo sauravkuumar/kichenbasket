@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Freshly - Grocery Delivery</title>
+  <link rel="stylesheet" href="style.css"/>
+  
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+          <div class="logo" style="color: green; font-size: 24px;">KichenBasket</div>
+          <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="menu" id="menu">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#categories">Categories</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+            <a href="#login" class="btn">Login</a>
+          </div>
+        </nav>
+      </header>
+    
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Fresh groceries delivered to your door</h2>
+      <p>Shop from the comfort of your home. Fresh fruits, vegetables, dairy & more delivered within 60 minutes!</p>
+      <button class="btn large">Start Shopping</button>
+    </div>
+    <img src="https://png.pngtree.com/png-clipart/20220131/original/pngtree-big-isolated-motorcycle-vector-colorful-icons-flat-illustrations-of-delivery-by-png-image_7255128.png" alt="Grocery Delivery">
+  </section>
+
+  <div class="popularlocation">
+    <h2>Popular Locations in <img src="https://b.zmtcdn.com/images/flags_z10/in.png?output-format=webp" alt="India Flag"> India</h2>
+    <p>From swanky upscale kitchens to cozy local gems, <strong>KitchenBasket</strong> brings you the best of both worlds. Whether you're exploring fresh produce, daily essentials, or specialty ingredients, we connect you directly with trusted local stores. Browse menus, check product photos, read reviews from real customers — and enjoy lightning-fast delivery in under 60 minutes, right to your doorstep. Your next great meal starts with KitchenBasket.</p>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card"><span>Delhi</span><i>&gt;</i></div>
+    <div class="city-card"><span>Mumbai</span><i>&gt;</i></div>
+    <div class="city-card"><span>Bangalore</span><i>&gt;</i></div>
+    <div class="city-card"><span>Kolkata</span><i>&gt;</i></div>
+    <div class="city-card"><span>Hyderabad</span><i>&gt;</i></div>
+    <div class="city-card"><span>Chennai</span><i>&gt;</i></div>
+    <div class="city-card"><span>Pune</span><i>&gt;</i></div>
+    <div class="city-card"><span>Ahmedabad</span><i>&gt;</i></div>
+  </div>
+
+  <section class="features">
+    <div class="feature">
+      <img src="https://cdn.pixabay.com/photo/2020/11/20/17/15/local-store-5762254_1280.png" alt="Fresh">
+      <h3>Farm Fresh</h3>
+      <p>We deliver straight from local farms to maintain freshness.</p>
+    </div>
+    <div class="feature">
+      <img src="https://png.pngtree.com/png-clipart/20230509/original/pngtree-fast-delivery-label-design-png-image_9153915.png" alt="Fast Delivery">
+      <h3>Fast Delivery</h3>
+      <p>Get your order delivered in under 30 minutes.</p>
+    </div>
+    <div class="feature">
+      <img src="https://static.vecteezy.com/system/resources/previews/029/899/733/non_2x/secure-payment-credit-card-icon-with-shield-secure-transaction-stock-illustration-vector.jpg" alt="Secure Payments">
+      <h3>Secure Payments</h3>
+      <p>Multiple payment options including COD, UPI, and cards.</p>
+    </div>
+  </section>
+
+  <section class="categories">
+    <h2>Shop by Category</h2>
+    <div class="category-grid">
+      <div class="category">
+        <img src="https://i.redd.it/sqx0kmv2bf061.png" alt="Fruits">
+        <p>Fruits</p>
+      </div>
+      <div class="category">
+        <img src="https://m.media-amazon.com/images/I/A17oRBRVQQL.jpg" alt="Vegetables">
+        <p>Vegetables</p>
+      </div>
+      <div class="category">
+        <img src="https://promova.com/content/dairy_foods_994e5cf540.png" alt="Dairy">
+        <p>Dairy</p>
+      </div>
+      <div class="category">
+        <img src="https://snackible.com/cdn/shop/files/DSC00717.jpg?v=1728113575&width=360" alt="Snacks">
+        <p>Snacks</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+
+    <div class="testimonial">
+      <p>“Freshly has changed how I shop. So easy and fast!”</p>
+      <span>— Priya S., Bangalore</span>
+    </div>
+
+    <div class="testimonial">
+      <p>“Their produce is always fresh and the delivery is super fast.”</p>
+      <span>— Ramesh M., Mumbai</span>
+    </div>
+
+  </section>
+
+  <section class="newsletter">
+    <h2>Stay updated!</h2>
+    <p>Subscribe to receive offers and updates</p>
+    <input type="email" id="email" placeholder="Enter your email" />
+    <button onclick="subscribe()">Subscribe</button>
+  </section>
+  <section class="team-section">
+    <h2>Meet Our Team</h2>
+    <p>Dedicated Professionals Driving our success</p>
+    <div class="team-container">
+
+      <div class="team-member">
+        <img src="https://www.anvayglobal.com/wp-content/uploads/2023/10/Akhil_Neelam.jpg" alt="Founder">
+        <h3>Gautam Kumar</h3>
+        <p>Founder and Chief Executive Officer</p>
+      </div>
+
+      <div class="team-member">
+        <img src="https://jaxayshah.com/data/insta_images/jaxay_shah/1027184702867690995.jpg" alt="Manager">
+        <h3>Himanshu Kumar</h3>
+        <p>Managing Director</p>
+      </div>
+
+      <div class="team-member">
+        <img src="https://exchange4media.gumlet.io/news-photo/138770-main40.jpg" alt="COO">
+        <h3>Siddharth Gautam</h3>
+        <p>Chief Operating Officer</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>ABOUT KITCHENBASKET</h4>
+        <ul>
+          <li><a href="#">Who We Are</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Work With Us</a></li>
+          <li><a href="#">Investor Relations</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>FOR USERS</h4>
+        <ul>
+          <li><a href="#">Your Account</a></li>
+          <li><a href="#">Order History</a></li>
+          <li><a href="#">Wishlist</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>FOR PARTNERS</h4>
+        <ul>
+          <li><a href="#">Partner with Us</a></li>
+          <li><a href="#">Store Registration</a></li>
+          <li><a href="#">KitchenBasket for Business</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>LEGAL</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="/termcondition.html">Terms & Conditions</a></li>
+          <li><a href="#">Security</a></li>
+          <li><a href="#">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-socials">
+        <a href="#">Instagram</a> |
+        <a href="#">Facebook</a> |
+        <a href="#">Twitter</a>
+      </div>
+      <p>&copy; 2025 KitchenBasket. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
