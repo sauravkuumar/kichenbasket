@@ -1,200 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Freshly - Grocery Delivery</title>
-  <link rel="stylesheet" href="style.css"/>
-  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zomato Clone Landing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            background-color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            color: white;
+            text-align: center;
+            background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+            background-attachment: fixed;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 0 20px;
+            text-align: center;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .download-buttons img {
+            height: 55px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .download-buttons img:hover {
+            transform: scale(1.1);
+        }
+
+        .scroll-down {
+            font-size: 1.2rem;
+            background: white;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .scroll-down:hover {
+            background: #ddd;
+        }
+
+        /* Info Section */
+        .info-section {
+            background-color: white;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            padding: 80px 20px 60px;
+            height: 100vh;
+            margin-top: -80px;
+            z-index: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-section h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .info-section p {
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            font-size: 1.1rem;
+            color: #555;
+            text-align: center;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .stat {
+            flex: 1 1 200px;
+            text-align: center;
+            max-width: 250px;
+        }
+
+        .stat img {
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .stat h3 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        .stat span {
+            color: #888;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .scroll-down {
+                font-size: 1rem;
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .download-buttons img {
+                height: 45px;
+            }
+        }
+
+        /* Info Section2 */
+        .info-section2 {
+            background: linear-gradient(to bottom, rgb(255, 158, 158), rgb(233, 233, 233));
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            padding: 80px 20px 60px;
+            height: 100vh;
+            margin-top: -80px;
+            z-index: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .info-section2 h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .info-section2 p {
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            font-size: 1.1rem;
+            color: #555;
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
 
-    <header>
-        <nav class="navbar">
-          <div class="logo" style="color: green; font-size: 24px;">KichenBasket</div>
-          <div class="menu-toggle" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-          <div class="menu" id="menu">
-            <a href="#home">Home</a>
-            <a href="#features">Features</a>
-            <a href="#categories">Categories</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#contact">Contact</a>
-            <a href="#login" class="btn">Login</a>
-          </div>
-        </nav>
-      </header>
-    
+    <!-- Hero Section with Fixed Background Image -->
+    <section class="hero">
+        <div class="overlay"></div>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Fresh groceries delivered to your door</h2>
-      <p>Shop from the comfort of your home. Fresh fruits, vegetables, dairy & more delivered within 60 minutes!</p>
-      <button class="btn large">Start Shopping</button>
-    </div>
-    <img src="https://png.pngtree.com/png-clipart/20220131/original/pngtree-big-isolated-motorcycle-vector-colorful-icons-flat-illustrations-of-delivery-by-png-image_7255128.png" alt="Grocery Delivery">
-  </section>
+        <div class="hero-content">
+            <h1>KichenBasket</h1>
+            <div class="download-buttons">
+                <a href="#"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png"
+                        alt="Google Play"></a>
+                
+            </div>
+            <a href="#info" class="scroll-down">▼ Scroll Down</a>
+        </div>
+    </section>
 
-  <div class="popularlocation">
-    <h2>Popular Locations in <img src="https://b.zmtcdn.com/images/flags_z10/in.png?output-format=webp" alt="India Flag"> India</h2>
-    <p>From swanky upscale kitchens to cozy local gems, <strong>KitchenBasket</strong> brings you the best of both worlds. Whether you're exploring fresh produce, daily essentials, or specialty ingredients, we connect you directly with trusted local stores. Browse menus, check product photos, read reviews from real customers — and enjoy lightning-fast delivery in under 60 minutes, right to your doorstep. Your next great meal starts with KitchenBasket.</p>
-  </div>
+    <!-- Info Section -->
+    <section id="info" class="info-section">
+        <h2>Better food for more people</h2>
+        <p>For over a decade, we’ve enabled our customers to discover new tastes, delivered right to their doorstep.</p>
 
-  <div class="city-grid">
-    <div class="city-card"><span>Delhi</span><i>&gt;</i></div>
-    <div class="city-card"><span>Mumbai</span><i>&gt;</i></div>
-    <div class="city-card"><span>Bangalore</span><i>&gt;</i></div>
-    <div class="city-card"><span>Kolkata</span><i>&gt;</i></div>
-    <div class="city-card"><span>Hyderabad</span><i>&gt;</i></div>
-    <div class="city-card"><span>Chennai</span><i>&gt;</i></div>
-    <div class="city-card"><span>Pune</span><i>&gt;</i></div>
-    <div class="city-card"><span>Ahmedabad</span><i>&gt;</i></div>
-  </div>
+        <div class="stats-container">
+            <div class="stat">
+                <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="Restaurants">
+                <h3>3,00,000+</h3>
+                <span>restaurants</span>
+            </div>
+            <div class="stat">
+                <img src="https://cdn-icons-png.flaticon.com/512/535/535285.png" alt="Cities">
+                <h3>800+</h3>
+                <span>cities</span>
+            </div>
+            <div class="stat">
+                <img src="https://cdn-icons-png.flaticon.com/512/1680/1680251.png" alt="Orders">
+                <h3>3 billion+</h3>
+                <span>orders delivered</span>
+            </div>
+        </div>
+    </section>
+    <section id="info" class="info-section2">
+        <h2>Better food for more people</h2>
+        <p>For over a decade, we’ve enabled our customers to discover new tastes, delivered right to their doorstep.</p>
 
-  <section class="features">
-    <div class="feature">
-      <img src="https://cdn.pixabay.com/photo/2020/11/20/17/15/local-store-5762254_1280.png" alt="Fresh">
-      <h3>Farm Fresh</h3>
-      <p>We deliver straight from local farms to maintain freshness.</p>
-    </div>
-    <div class="feature">
-      <img src="https://png.pngtree.com/png-clipart/20230509/original/pngtree-fast-delivery-label-design-png-image_9153915.png" alt="Fast Delivery">
-      <h3>Fast Delivery</h3>
-      <p>Get your order delivered in under 30 minutes.</p>
-    </div>
-    <div class="feature">
-      <img src="https://static.vecteezy.com/system/resources/previews/029/899/733/non_2x/secure-payment-credit-card-icon-with-shield-secure-transaction-stock-illustration-vector.jpg" alt="Secure Payments">
-      <h3>Secure Payments</h3>
-      <p>Multiple payment options including COD, UPI, and cards.</p>
-    </div>
-  </section>
+        <div class="container">
+            <div class="con">
+                <img src="https://b.zmtcdn.com/data/o2_assets/85fa7a0c955ba0f8d894b6b68a27cdf81742978539.png" alt="">
+                <title>Quick Delivery</title>
+            </div>
+            <div class="con">
+                <img src="https://b.zmtcdn.com/data/o2_assets/82f145180cd6f920a8a8617dda366a0a1742455963.png" alt="">
+                <title>Quick Delivery</title>
+            </div>
+            <div class="con">
+                <img src="" alt="">
+                <title>Food on Train</title>
+            </div>
+            <div class="con">
+                <img src="" alt="">
+                <title>Healthy</title>
+            </div>
+            <div class="con">
+                <img src="" alt="">
+                <title>Pl</title>
+            </div>
+            <div class="con">
+                <img src="" alt="">
+                <title>Quick Delivery</title>
+            </div>
 
-  <section class="categories">
-    <h2>Shop by Category</h2>
-    <div class="category-grid">
-      <div class="category">
-        <img src="https://i.redd.it/sqx0kmv2bf061.png" alt="Fruits">
-        <p>Fruits</p>
-      </div>
-      <div class="category">
-        <img src="https://m.media-amazon.com/images/I/A17oRBRVQQL.jpg" alt="Vegetables">
-        <p>Vegetables</p>
-      </div>
-      <div class="category">
-        <img src="https://promova.com/content/dairy_foods_994e5cf540.png" alt="Dairy">
-        <p>Dairy</p>
-      </div>
-      <div class="category">
-        <img src="https://snackible.com/cdn/shop/files/DSC00717.jpg?v=1728113575&width=360" alt="Snacks">
-        <p>Snacks</p>
-      </div>
-    </div>
-  </section>
+        </div>
+    </section>
 
-  <section class="testimonials">
-    <h2>What Our Customers Say</h2>
 
-    <div class="testimonial">
-      <p>“Freshly has changed how I shop. So easy and fast!”</p>
-      <span>— Priya S., Bangalore</span>
-    </div>
-
-    <div class="testimonial">
-      <p>“Their produce is always fresh and the delivery is super fast.”</p>
-      <span>— Ramesh M., Mumbai</span>
-    </div>
-
-  </section>
-
-  <section class="newsletter">
-    <h2>Stay updated!</h2>
-    <p>Subscribe to receive offers and updates</p>
-    <input type="email" id="email" placeholder="Enter your email" />
-    <button onclick="subscribe()">Subscribe</button>
-  </section>
-  <section class="team-section">
-    <h2>Meet Our Team</h2>
-    <p>Dedicated Professionals Driving our success</p>
-    <div class="team-container">
-
-      <div class="team-member">
-        <img src="https://www.anvayglobal.com/wp-content/uploads/2023/10/Akhil_Neelam.jpg" alt="Founder">
-        <h3>Gautam Kumar</h3>
-        <p>Founder and Chief Executive Officer</p>
-      </div>
-
-      <div class="team-member">
-        <img src="https://jaxayshah.com/data/insta_images/jaxay_shah/1027184702867690995.jpg" alt="Manager">
-        <h3>Himanshu Kumar</h3>
-        <p>Managing Director</p>
-      </div>
-
-      <div class="team-member">
-        <img src="https://exchange4media.gumlet.io/news-photo/138770-main40.jpg" alt="COO">
-        <h3>Siddharth Gautam</h3>
-        <p>Chief Operating Officer</p>
-      </div>
-
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-container">
-      <div class="footer-section">
-        <h4>ABOUT KITCHENBASKET</h4>
-        <ul>
-          <li><a href="#">Who We Are</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Work With Us</a></li>
-          <li><a href="#">Investor Relations</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>FOR USERS</h4>
-        <ul>
-          <li><a href="#">Your Account</a></li>
-          <li><a href="#">Order History</a></li>
-          <li><a href="#">Wishlist</a></li>
-          <li><a href="#">FAQs</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>FOR PARTNERS</h4>
-        <ul>
-          <li><a href="#">Partner with Us</a></li>
-          <li><a href="#">Store Registration</a></li>
-          <li><a href="#">KitchenBasket for Business</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>LEGAL</h4>
-        <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="/termcondition.html">Terms & Conditions</a></li>
-          <li><a href="#">Security</a></li>
-          <li><a href="#">Sitemap</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="footer-socials">
-        <a href="#">Instagram</a> |
-        <a href="#">Facebook</a> |
-        <a href="#">Twitter</a>
-      </div>
-      <p>&copy; 2025 KitchenBasket. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-  <script>
-    function toggleMenu() {
-      document.getElementById('menu').classList.toggle('active');
-    }
-  </script>
 </body>
+<style>
+    .info-section2 .container .con img{
+        width: 100px;
+    }
+</style>
+
 </html>
